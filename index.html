@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dion I. Jones</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b1a2e;
+  --navy2:#0f2240;
+  --navy3:#162f55;
+  --gold:#c9a84c;
+  --gold2:#e2c272;
+  --white:#f0eee8;
+  --muted:rgba(240,238,232,0.5);
+  --faint:rgba(240,238,232,0.15);
+}
+html,body{min-height:100vh;background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;font-weight:300}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 80% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse 50% 70% at 10% 80%,rgba(22,47,85,0.6) 0%,transparent 60%);pointer-events:none;z-index:0}
+.page{position:relative;z-index:1;min-height:100vh;display:grid;grid-template-columns:420px 1fr;max-width:1100px;margin:0 auto}
+.col-photo{position:relative;overflow:hidden;animation:fadeIn 1.2s ease both}
+.col-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:sepia(15%) contrast(1.08) brightness(0.92)}
+.photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,var(--navy) 100%),linear-gradient(to top,var(--navy) 0%,transparent 25%)}
+.photo-tag{position:absolute;bottom:2rem;left:2rem;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);opacity:0.8}
+.col-content{display:flex;flex-direction:column;justify-content:center;padding:4rem 4rem 4rem 3rem;animation:slideIn 1s cubic-bezier(0.16,1,0.3,1) 0.2s both}
+.rule{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem}
+.rule-line{width:32px;height:1px;background:var(--gold);opacity:0.7}
+.rule-text{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,4.5vw,4.5rem);font-weight:400;line-height:1;color:var(--white);margin-bottom:0.2rem}
+h1 em{font-style:italic;color:var(--gold)}
+.subtitle{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem}
+.divider{width:100%;height:1px;background:var(--faint);margin-bottom:2rem}
+.bio{font-size:0.92rem;line-height:1.9;color:rgba(240,238,232,0.7);margin-bottom:2.5rem}
+.bio p+p{margin-top:0.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2.5rem}
+.tag{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(201,168,76,0.3);border-radius:2px;color:rgba(201,168,76,0.7)}
+.cta{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:0.75rem 1.75rem;background:var(--gold);color:var(--navy);font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.2s,transform 0.15s}
+.btn:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.email{font-size:0.72rem;color:var(--muted);text-decoration:none;letter-spacing:0.06em;border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:1px;transition:color 0.2s,border-color 0.2s}
+.email:hover{color:var(--gold);border-color:var(--gold)}
+.footer{position:fixed;bottom:0;left:0;right:0;padding:0.85rem 3rem;display:flex;justify-content:space-between;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,238,232,0.15);border-top:1px solid rgba(255,255,255,0.04);z-index:10;background:rgba(11,26,46,0.7);backdrop-filter:blur(4px)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:800px){
+  .page{grid-template-columns:1fr;min-height:auto}
+  .col-photo{height:320px}
+  .col-content{padding:2.5rem 1.5rem 5rem}
+  h1{font-size:3rem}
+  .footer{padding:0.85rem 1.5rem}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="col-photo">
+    <img src="Davis_Dion_287-0045.jpg" alt="Dion I. Jones">
+    <div class="photo-overlay"></div>
+    <span class="photo-tag">Chicago &middot; Atlanta</span>
+  </div>
+  <div class="col-content">
+    <div class="rule"><span class="rule-line"></span><span class="rule-text">AI &amp; Technology Leader</span></div>
+    <h1>Dion <em>I.</em><br>Jones</h1>
+    <p class="subtitle">ITSM &nbsp;&middot;&nbsp; Artificial Intelligence &nbsp;&middot;&nbsp; Enterprise Operations</p>
+    <div class="divider"></div>
+    <div class="bio">
+      <p>Dion Jones is an AI-driven operations strategist with nearly two decades of experience transforming enterprise support functions into intelligent, data-enabled platforms. Currently serving as Manager of ITSM Problem Management at Hyatt Hotels Corporation, he has accelerated IT maturity from 1.9 to 2.7 in under a year.</p>
+      <p>Pursuing his MS in Artificial Intelligence at Kennesaw State University, Dion bridges operational rigor and applied AI &mdash; building NLP-based incident detection systems, custom GPTs for root cause analysis, and frameworks that move organizations from reactive response to systemic resilience.</p>
+    </div>
+    <div class="tags">
+      <span class="tag">Problem Management</span>
+      <span class="tag">NLP &amp; AI Systems</span>
+      <span class="tag">ITIL 4</span>
+      <span class="tag">ServiceNow</span>
+      <span class="tag">Enterprise Strategy</span>
+      <span class="tag">Azure</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://www.linkedin.com/in/jonesdion" target="_blank" rel="noopener">
+        Connect on LinkedIn
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+      <a class="email" href="mailto:dion@dionijones.com">dion@dionijones.com</a>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <span>dionijones.com</span>
+  <span>&copy; 2026 Dion I. Jones</span>
+</div>
+</body>
+</html>
